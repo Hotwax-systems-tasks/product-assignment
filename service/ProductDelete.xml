@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="delete" noun="ProductCategory">
+        <in-parameters>
+            <parameter name="productCategoryId" />
+        </in-parameters>
+        <actions>
+            <entity-find-one entity-name="moqui.Category.ProductCategory" value-field="datalist">
+                <field-map field-name="productCategoryId" from="context.productCategoryId" />
+            </entity-find-one>
+            <if condition="datalist != null">
+                <entity-delete-related value-field="datalist" relationship-name="ProductCategoryMember"/>
+                <entity-delete value-field="datalists"/>
+            </if>
+        </actions>
+    </service>
+</services>

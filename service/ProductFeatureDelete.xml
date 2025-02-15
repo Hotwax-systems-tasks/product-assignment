@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <!-- Service for Delete Feature -->
+    <service verb="delete" noun="ProductFeature">
+        <in-parameters>
+            <parameter name="productFeatureId" />
+        </in-parameters>    
+        <actions>
+            <entity-find-one entity-name="moqui.Feature.ProductFeature" value-field="datalist">
+                <field-map field-name="productFeatureId" from="context.productFeatureId" />
+            </entity-find-one>
+            <if condition="datalist != null">
+                <entity-delete-related value-field="datalist" relationship-name="productFeatureAppl"/>
+            <else>
+                <message>User not exists</message>
+            </else>
+            </if>
+        </actions>
+    </service>
+</services>

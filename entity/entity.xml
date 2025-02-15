@@ -3,7 +3,7 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
 
-    <entity entity-name="Category" package="moqui.Catalog">
+    <entity entity-name="Category" package="catalog.package">
         <field name="categoryId" type="id" is-pk="true"/>
         <field name="categoryType" type="id" />
         <field name="name" type="text-medium" />
@@ -19,7 +19,7 @@
         </seed-data>
     </entity>
 
-    <entity entity-name="Product" package="moqui.Catalog">
+    <entity entity-name="Product" package="catalog.package">
         <field name="productId" type="id" is-pk="true"/>
         <field name="name" type="text-medium" />
         <field name="type" type="id" />
@@ -39,7 +39,7 @@
         </seed-data>
     </entity>
 
-    <entity entity-name="ProductContent" package="moqui.Catalog">
+    <entity entity-name="ProductContent" package="catalog.package">
         <field name="contentId" type="id" is-pk="true" />
         <field name="productId" type="id" />
         <field name="contentType" type="id" />
@@ -60,7 +60,7 @@
         </seed-data>
     </entity>
 
-    <entity entity-name="ProductPrice" package="moqui.Catalog">
+    <entity entity-name="ProductPrice" package="catalog.package">
         <field name="productId" type="id" />
         <field name="priceId" type="id" />
         <field name="priceType" type="id" />
@@ -80,7 +80,7 @@
         </seed-data>
     </entity>
 
-    <entity entity-name="ProductDimension" package="moqui.Catalog">
+    <entity entity-name="ProductDimension" package="catalog.package">
         <field name="productId" type="id" is-pk="true" />
         <field name="dimensionType" type="id" is-pk="true"/>
         <field name="value" type="text-medium" />
@@ -102,23 +102,23 @@
         </seed-data>
     </entity>
 
-    <entity entity-name="ProductFeature" package="moqui.Catalog">
+    <entity entity-name="ProductFeature" package="catalog.package">
         <field name="featureId" type="id" is-pk="true" />
-        <field name="featureType" type="id" />
+        <field name="featureTypeEnumId" type="id" />
 
         <relationship type="one" title="FeatureType" related="Enumeration">
             <key-map field-name="featureType" related="enumId"/>
         </relationship>
 
         <seed-data>
-            <moqui.basic.EnumerationType description="FeatureType" enumTypeId="FeatureType" />
+            <moqui.basic.EnumerationType description="FeatureTypeEnumId" enumTypeId="FeatureTypeEnumId" />
             <moqui.basic.Enumeration description="Color" enumId="COLOR" enumTypeId="FeatureType"/>
             <moqui.basic.Enumeration description="Size" enumId="SIZE" enumTypeId="FeatureType"/>    
             <moqui.basic.Enumeration description="Material" enumId="MATERIAL" enumTypeId="FeatureType"/>
         </seed-data>
     </entity>
 
-    <entity entity-name="ProductFeatureAppl" package="moqui.Catalog">
+    <entity entity-name="ProductFeatureAppl" package="catalog.package">
         <field name="productId" type="id" is-pk="true" />
         <field name="featureId" type="id" is-pk="true"/>
         <field name="fromDate" type="date" is-pk="true" />

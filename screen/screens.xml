@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        require-authentication="anonymous-all">
+
+    <transition name="createProduct">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProduct">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProduct">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="createCategory">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteCategory">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateCategory">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- ProductContent transitions -->
+    <transition name="createProductContent">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductContent">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductContent">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- ProductPrice transitions -->
+    <transition name="createProductPrice">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductPrice">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductPrice">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- ProductDimension transitions -->
+    <transition name="createProductDimension">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductDimension">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductDimension">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- ProductFeature transitions -->
+    <transition name="createProductFeature">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductFeature">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductFeature">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <!-- ProductFeatureAppl transitions -->
+    <transition name="createProductFeatureAppl">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductFeatureAppl">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductFeatureAppl">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="createCategory">
+        <service-call name="create#product.catalog.category"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteCategory">
+        <service-call name="delete#product.catalog.category"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateCategory">
+        <service-call name="update#product.catalog.category"/>
+        <default-response url="."/>
+    </transition>
+      <transition name="createProductPrice">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductPrice">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductPrice">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="createProductDimension">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductDimension">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductDimension">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="createProductFeature">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductFeature">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductFeature">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="createProductFeatureAppl">
+        <service-call name="create#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="deleteProductFeatureAppl">
+        <service-call name="delete#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="updateProductFeatureAppl">
+        <service-call name="update#product.catalog.package"/>
+        <default-response url="."/>
+    </transition>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Product" />
+            </box-header>
+            <box-body-nopad>
+                <container-dialog id="createProductItem" button-text="Create a Product">
+                    <form-single name="CreateProduct" transition="createProduct">
+                        <auto-fields-entity entity-name="catalog.package.Product" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductItem" button-text="Delete Product">
+                    <form-single name="DeleteProduct" transition="deleteProduct">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductItem" button-text="Update Product">
+                    <form-single name="UpdateProduct" transition="updateProduct">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.Product" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+            </box-body-nopad>
+         </container-box>
+         
+         <container-box>
+            <box-header>
+                <label text="Category" />
+            </box-header>
+            <box-body-nopad>
+                <container-dialog id="createCategoryItem" button-text="Create a Category">
+                    <form-single name="CreateCategory" transition="createCategory">
+                        <auto-fields-entity entity-name="catalog.package.Category" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteCategoryItem" button-text="Delete Category">
+                    <form-single name="DeleteCategory" transition="deleteCategory">
+                        <field name="categoryId">
+                            <default-field title="Category Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateCategoryItem" button-text="Update Category">
+                    <form-single name="UpdateCategory" transition="updateCategory">
+                        <field name="categoryId">
+                            <default-field title="Category Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.Category" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+            </box-body-nopad>
+        </container-box>
+        <container-box>
+            <box-header>
+                <label text="Product content" />
+            </box-header>
+            <box-body>
+                <container-dialog id="createProductContentItem" button-text="Create Product Content">
+                    <form-single name="CreateProductContent" transition="createProductContent">
+                        <auto-fields-entity entity-name="catalog.package.ProductContent" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductContentItem" button-text="Delete Product Content">
+                    <form-single name="DeleteProductContent" transition="deleteProductContent">
+                        <field name="contentId">
+                            <default-field title="Content Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductContentItem" button-text="Update Product Content">
+                    <form-single name="UpdateProductContent" transition="updateProductContent">
+                        <field name="contentId">
+                            <default-field title="Content Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductContent" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+            </box-body>
+        </container-box>
+        <container-box>
+          <box-header>
+              <label text="Product Price" />
+            </box-header>
+            <box-body-nopad>
+               <container-dialog id="createProductPriceItem" button-text="Create Product Price">
+                    <form-single name="CreateProductPrice" transition="createProductPrice">
+                        <auto-fields-entity entity-name="catalog.package.ProductPrice" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductPriceItem" button-text="Delete Product Price">
+                    <form-single name="DeleteProductPrice" transition="deleteProductPrice">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="priceId">
+                            <default-field title="Price Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductPriceItem" button-text="Update Product Price">
+                    <form-single name="UpdateProductPrice" transition="updateProductPrice">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="priceId">
+                            <default-field title="Price Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductPrice" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+            </box-body-nopad>
+        </container-box>
+        <container-box>
+           <box-header>
+               <label text="Product Dimension" />
+            </box-header>
+               <box-body-nopad>
+                  <container-dialog id="createProductPriceItem" button-text="Create Product Price">
+                    <form-single name="CreateProductPrice" transition="createProductPrice">
+                        <auto-fields-entity entity-name="catalog.package.ProductPrice" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductPriceItem" button-text="Delete Product Price">
+                    <form-single name="DeleteProductPrice" transition="deleteProductPrice">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="priceId">
+                            <default-field title="Price Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductPriceItem" button-text="Update Product Price">
+                    <form-single name="UpdateProductPrice" transition="updateProductPrice">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="priceId">
+                            <default-field title="Price Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductPrice" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+               </box-body-nopad>
+        </container-box>
+        <container-box>
+            <box-header>
+                <label text="Product Dimension" />
+            </box-header>
+            <box-body-nopad>
+                <container-dialog id="createProductDimensionItem" button-text="Create Product Dimension">
+                    <form-single name="CreateProductDimension" transition="createProductDimension">
+                        <auto-fields-entity entity-name="catalog.package.ProductDimension" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductDimensionItem" button-text="Delete Product Dimension">
+                    <form-single name="DeleteProductDimension" transition="deleteProductDimension">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="dimensionType">
+                            <default-field title="Dimension Type">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductDimensionItem" button-text="Update Product Dimension">
+                    <form-single name="UpdateProductDimension" transition="updateProductDimension">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="dimensionType">
+                            <default-field title="Dimension Type">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductDimension" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+            </box-body-nopad>
+        </container-box>
+        <container-box>
+          <box-header>
+            <label text="Product Feature" />
+          </box-header>
+          <box-body-nopad>
+                             <container-dialog id="createProductFeatureItem" button-text="Create Product Feature">
+                    <form-single name="CreateProductFeature" transition="createProductFeature">
+                        <auto-fields-entity entity-name="catalog.package.ProductFeature" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductFeatureItem" button-text="Delete Product Feature">
+                    <form-single name="DeleteProductFeature" transition="deleteProductFeature">
+                        <field name="featureId">
+                            <default-field title="Feature Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductFeatureItem" button-text="Update Product Feature">
+                    <form-single name="UpdateProductFeature" transition="updateProductFeature">
+                        <field name="featureId">
+                            <default-field title="Feature Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductFeature" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+          </box-body-nopad>
+        </container-box>
+        <container-box>
+          <box-header>
+            <label text="Product Feature Appl" />
+          </box-header>
+          <box-body-nopad>
+          <container-dialog id="createProductFeatureApplItem" button-text="Create Product Feature Application">
+                    <form-single name="CreateProductFeatureAppl" transition="createProductFeatureAppl">
+                        <auto-fields-entity entity-name="catalog.package.ProductFeatureAppl" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="deleteProductFeatureApplItem" button-text="Delete Product Feature Application">
+                    <form-single name="DeleteProductFeatureAppl" transition="deleteProductFeatureAppl">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="featureId">
+                            <default-field title="Feature Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="fromDate">
+                            <default-field title="From Date">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="submit">
+                            <default-field title="Delete">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+                <container-dialog id="updateProductFeatureApplItem" button-text="Update Product Feature Application">
+                    <form-single name="UpdateProductFeatureAppl" transition="updateProductFeatureAppl">
+                        <field name="productId">
+                            <default-field title="Product Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="featureId">
+                            <default-field title="Feature Id">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <field name="fromDate">
+                            <default-field title="From Date">
+                                <text-find/>
+                            </default-field>
+                        </field>
+                        <auto-fields-entity entity-name="catalog.package.ProductFeatureAppl" field-type="edit"/>
+                        <field name="submit">
+                            <default-field title="Update">
+                                <submit/>
+                            </default-field>
+                        </field>
+                    </form-single>
+                </container-dialog>
+
+            </box-body-nopad>
+        </container-box>
+    </widgets>
+</screen>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+
+    <!-- Service for Deleting Product -->
+    <service verb="delete" noun="Product">
+        <in-parameters>
+            <parameter name="productId" />
+        </in-parameters>
+        <actions>
+             <entity-find-one entity-name="moqui.Product.Product" value-field="datalist">
+                <field-map field-name="productId" from="context.productId" />
+             </entity-find-one>
+
+            <if condition="datalist != null">
+                <entity-delete-related value-field="datalist" relationship-name="ProductContent" />
+                <entity-delete-related value-field="datalist" relationship-name="ProductPrice"/>
+                <entity-delete-related value-field="datalist" relationship-name="ProductDimension" />
+                <entity-delete-related value-field="datalist" relationship-name="ProductAssoc" />
+
+                <entity-delete value-field="datalist" />
+
+                <else>
+                    <message>Object not exists</message>
+                </else>
+            </if>
+            
+        </actions>
+    </service>
+
+    <!-- Service for display the data (GET) -->
+    <service verb="fetch" noun="Product">
+        <in-parameters>
+            <parameter name="productId" />
+        </in-parameters>
+        <out-parameters>
+            <parameter name="productlist"/>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="Product" list="productlist">
+                <econdition field-name="productId" from="context.productId" ignore-if-empty="true"/>
+            </entity-find>
+        </actions>
+    </service>
+</services>
